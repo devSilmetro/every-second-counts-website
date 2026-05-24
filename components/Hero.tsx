@@ -82,7 +82,7 @@ export function Hero() {
                 delay={0.55}
                 className="accent"
               />{" "}
-              <Words text="count." delay={0.95} />
+              <Words text="counts." delay={0.95} />
             </h1>
 
             <motion.p

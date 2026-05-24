@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Every Second Count — When Violence Strikes, Every Second Count.",
+  title: "Every Second Count — When Violence Strikes, Every Second Counts.",
   description:
     "Every Second Count is a U.S. nonprofit building life-saving evacuation technology for schools, places of worship, and community spaces — and supporting families impacted by gun violence.",
 };
