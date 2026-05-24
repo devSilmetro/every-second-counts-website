@@ -31,7 +31,7 @@ APP_USER="${APP_USER:-$(whoami)}"
 APP_HOME="/opt/everysecondcount.org"
 DOMAIN="everysecondcount.org"
 WWW_DOMAIN="www.everysecondcount.org"
-APP_PORT="3002"
+APP_PORT="3003"  # 3002 is taken by PM2-managed Express on this VM
 NODE_MAJOR="20"
 LETSENCRYPT_EMAIL="dev@silmetro.com"
 
@@ -94,11 +94,15 @@ WantedBy=multi-user.target
 EOF
 
 sudo systemctl daemon-reload
+# Clear any 'failed' state from a previous bad run so the restart sticks
+sudo systemctl reset-failed everysecondcount-web 2>/dev/null || true
 sudo systemctl enable --now everysecondcount-web
 # Always restart in case code changed
 sudo systemctl restart everysecondcount-web
 sleep 2
-sudo systemctl status everysecondcount-web --no-pager | head -10
+# `|| true` because systemctl status exits non-zero on a failing unit and
+# would otherwise abort the script (set -euo pipefail) before nginx + certbot.
+sudo systemctl status everysecondcount-web --no-pager | head -10 || true
 
 # ---- 5. nginx server block ----
 echo "[6/7] Configuring nginx for ${DOMAIN}…"
