@@ -83,9 +83,9 @@ Type=simple
 User=${APP_USER}
 WorkingDirectory=${APP_HOME}
 Environment=NODE_ENV=production
-Environment=PORT=${APP_PORT}
-Environment=HOSTNAME=127.0.0.1
-ExecStart=/usr/bin/npm run start
+# Invoke next directly with -H/-p flags. Setting HOSTNAME via env var
+# is unreliable through npm wrappers; CLI flags are honored every time.
+ExecStart=${APP_HOME}/node_modules/.bin/next start -H 127.0.0.1 -p ${APP_PORT}
 Restart=on-failure
 RestartSec=3
 
