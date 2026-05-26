@@ -144,10 +144,11 @@ const INCIDENTS: Incident[] = [
       "Three nine-year-old students and three staff members were killed at a private Christian elementary school. Officers reached and stopped the shooter in 14 minutes.",
     lesson:
       "Fast response saves lives — but pre-attack preparation saves the lives between the first shot and the first officer.",
-    image: "/images/incidents/covenant.svg",
-    alt: "Memorial outside The Covenant School in Nashville",
+    image: "/images/incidents/covenant.jpg",
+    alt: "Covenant Presbyterian Church and the Covenant School in Nashville",
     source: "https://en.wikipedia.org/wiki/Covenant_School_shooting",
     sourceLabel: "Wikipedia",
+    credit: "Photo: Dclemens1971 · CC BY-SA 4.0 via Wikimedia Commons",
   },
   {
     title: "Robb Elementary",
@@ -161,10 +162,11 @@ const INCIDENTS: Incident[] = [
       "Nineteen children and two teachers were killed in a fourth-grade classroom. Law enforcement waited 77 minutes in the hallway before entering the room.",
     lesson:
       "When professional response is delayed, what people inside the building already know — or don't — decides who lives.",
-    image: "/images/incidents/uvalde.svg",
-    alt: "Children running from Robb Elementary School during the Uvalde shooting",
+    image: "/images/incidents/uvalde.jpg",
+    alt: "Memorial outside Robb Elementary School in Uvalde, Texas",
     source: "https://en.wikipedia.org/wiki/Robb_Elementary_School_shooting",
     sourceLabel: "Wikipedia",
+    credit: "Photo: Voice of America · Public domain",
   },
   {
     title: "Oxford High School",
