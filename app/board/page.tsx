@@ -30,8 +30,6 @@ const MEMBERS: Member[] = [
       "He is a two-time founder with more than $12M in revenue across prior ventures, and serves as CEO of SiliconMetro — the for-profit technology company whose evacuation-routing research underpins the systems Every Second Count deploys at no cost to schools, places of worship, and community spaces.",
     ],
     initials: "SD",
-    photo: "/images/board/sumit.png",
-    photoFit: "contain",
   },
   {
     name: "Russell Marne",
