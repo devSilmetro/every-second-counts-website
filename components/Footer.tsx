@@ -59,7 +59,7 @@ export function Footer() {
                   <a href="#">Form 990</a>
                 </li>
                 <li>
-                  <a href="#">Board of directors</a>
+                  <a href="/board">Board of directors</a>
                 </li>
               </ul>
             </div>
@@ -82,6 +82,16 @@ export function Footer() {
                 </li>
               </ul>
             </div>
+          </div>
+          <div className="footer-legal-row">
+            <span className="footer-legal-lbl">General Counsel</span>
+            <span className="footer-legal-val">
+              Russell Marne · Newsom, Griffin &amp; Marne Law Group
+              <br />
+              30 N. San Pedro Rd., Ste 195, San Rafael, CA 94903 ·{" "}
+              <a href="tel:+14154998100">415.499.8100</a> ·{" "}
+              <a href="mailto:Russell@MarneLaw.com">Russell@MarneLaw.com</a>
+            </span>
           </div>
           <div className="footer-bottom">
             <div className="legal">

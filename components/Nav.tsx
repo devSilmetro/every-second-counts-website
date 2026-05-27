@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 import { MobileMenu } from "./MobileMenu";
 
 const LINKS = [
-  { href: "#problem", label: "The Problem" },
-  { href: "#pattern", label: "The Pattern" },
-  { href: "#mission", label: "Mission" },
-  { href: "#build", label: "What We Build" },
-  { href: "#family", label: "Family Support" },
-  { href: "#transparency", label: "Transparency" },
+  { href: "/#problem", label: "The Problem" },
+  { href: "/#pattern", label: "The Pattern" },
+  { href: "/#mission", label: "Mission" },
+  { href: "/#build", label: "What We Build" },
+  { href: "/#family", label: "Family Support" },
+  { href: "/board", label: "Board" },
+  { href: "/#transparency", label: "Transparency" },
 ];
 
 export function Nav() {
@@ -33,7 +34,7 @@ export function Nav() {
         transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
       >
         <div className="container nav-inner">
-          <a href="#" className="brand" onClick={() => setOpen(false)}>
+          <a href="/" className="brand" onClick={() => setOpen(false)}>
             <span className="brand-mark">
               <span className="dot" />
             </span>
@@ -49,7 +50,7 @@ export function Nav() {
             ))}
           </div>
           <div className="nav-cta">
-            <a href="#mission" className="btn btn-ghost btn-sm">
+            <a href="/#mission" className="btn btn-ghost btn-sm">
               Learn the Mission
             </a>
             <a

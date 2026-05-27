@@ -80,7 +80,7 @@ export function MobileMenu({
             >
               Donate to Save Lives
             </a>
-            <a href="#mission" className="btn btn-ghost" onClick={onClose}>
+            <a href="/#mission" className="btn btn-ghost" onClick={onClose}>
               Learn the Mission
             </a>
           </motion.div>
