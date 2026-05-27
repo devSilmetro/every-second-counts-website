@@ -16,6 +16,8 @@ type Member = {
   short: string;        // one-liner under the name
   bio: string[];        // paragraphs
   initials: string;
+  photo?: string;       // optional /public path
+  photoFit?: "cover" | "contain"; // cover = fills frame; contain = centered on bg
 };
 
 const MEMBERS: Member[] = [
@@ -28,6 +30,8 @@ const MEMBERS: Member[] = [
       "He is a two-time founder with more than $12M in revenue across prior ventures, and serves as CEO of SiliconMetro — the for-profit technology company whose evacuation-routing research underpins the systems Every Second Count deploys at no cost to schools, places of worship, and community spaces.",
     ],
     initials: "SD",
+    photo: "/images/board/sumit.png",
+    photoFit: "contain",
   },
   {
     name: "Russell Marne",
@@ -38,15 +42,31 @@ const MEMBERS: Member[] = [
       "Before private practice he spent ten years at The Getty Trust, one of the largest cultural institutions in the United States, where he handled the day-to-day legal questions that come with stewarding public-interest assets at scale. He guides the board on compliance, donor obligations, and the structural questions every young nonprofit has to get right the first time.",
     ],
     initials: "RM",
+    photo: "/images/board/russell.jpg",
+    photoFit: "cover",
   },
 ];
 
 function MemberCard({ m, index }: { m: Member; index: number }) {
   return (
     <StaggerItem className="member">
-      <div className="member-portrait" aria-hidden>
-        <span className="member-initials">{m.initials}</span>
-        <span className="member-idx">— {String(index + 1).padStart(2, "0")}</span>
+      <div className={`member-portrait${m.photo ? " has-photo" : ""}`}>
+        {m.photo ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={m.photo}
+            alt={`Portrait of ${m.name}`}
+            className={`member-photo member-photo-${m.photoFit ?? "cover"}`}
+            loading="lazy"
+          />
+        ) : (
+          <span className="member-initials" aria-hidden>
+            {m.initials}
+          </span>
+        )}
+        <span className="member-idx" aria-hidden>
+          — {String(index + 1).padStart(2, "0")}
+        </span>
       </div>
       <div className="member-body">
         <div className="member-role">{m.role}</div>
